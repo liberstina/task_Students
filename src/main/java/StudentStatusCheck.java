@@ -9,7 +9,7 @@ public class StudentStatusCheck {
         Course javascript = new Course("javascript", 300);
         Course javaCore = new Course("java core", 500);
         Course javaSE = new Course("java SE", 500);
-        Course automation = new Course ("automation", 200);
+        Course automation = new Course("automation", 200);
         Course html = new Course("html", 100);
         Course css = new Course("css", 200);
         Course qa = new Course("qa", 300);
