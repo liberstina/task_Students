@@ -1,7 +1,4 @@
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Marinka on 19.06.2017.
@@ -49,14 +46,6 @@ public class Student {
         return program;
     }
 
-    public int calculateDuration(Map<Course, Integer> program) {
-        int totalHours = 0;
-        for (Map.Entry<Course, Integer> entry : program.entrySet()) {
-            totalHours += entry.getValue();
-        }
-        return totalHours;
-    }
-
     public void realWork(Calendar startDate, int duration) {
         Calendar currentDate = Calendar.getInstance();
         long durationInMillis = duration * 3600000;
@@ -66,5 +55,20 @@ public class Student {
         else
             System.out.println("Обучение не закончено. До окончания осталось " + (difference - durationInMillis) / 3600000 + " часов.");
     }
-
+/*
+    public void realWork(Calendar startDate, int duration) {
+        Scanner scan = new Scanner(System.in);
+        Calendar currentDate = Calendar.getInstance();
+        long durationInMillis = duration * 3600000;
+        long difference = startDate.getTimeInMillis() - currentDate.getTimeInMillis();
+        if ((difference < durationInMillis) && ((scan.nextLine().equals("0")) || (scan.nextLine().equals(""))))
+            System.out.println("Обучение закончено. После окончания прошло " + (durationInMillis - difference) / 3600000 + " часов.");
+        else if ((difference < durationInMillis) && (!(scan.nextLine().equals("0") )|| !(scan.nextLine().equals(""))))
+            System.out.println(name.toString() + " " + surname.toString() + " Working hours from 00 till 24 " + duration + " " + startDate + " Обучение закончено. После окончания прошло " + (durationInMillis - difference) / 3600000 + " часов.");
+        else if ((difference > durationInMillis) && ((scan.nextLine().equals("0")) || (scan.nextLine().equals(""))))
+        System.out.println("Обучение не закончено. До окончания осталось " + (difference - durationInMillis) / 3600000 + " часов.");
+        else if ((difference > durationInMillis) && (!(scan.nextLine().equals("0")) || !(scan.nextLine().equals(""))))
+            System.out.println(name.toString() + " " + surname.toString() + " Working hours from 00 till 24 " + duration + " " + startDate + " Обучение не закончено. До окончания осталось " + (difference - durationInMillis) / 3600000 + " часов.");
+    }
+*/
 }
