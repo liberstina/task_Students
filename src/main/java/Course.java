@@ -13,16 +13,4 @@ public class Course {
     public int getDuration() {
         return duration;
     }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
