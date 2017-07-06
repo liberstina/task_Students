@@ -1,11 +1,13 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by Marinka on 19.06.2017.
  */
 public class StudentStatusCheck {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, ParseException {
 
-        //TODO create individual program
-        //TODO create student and perform calculation results
         Program java = new Program("java developer", "23/06/2017");
         Program javascript = new Program("javascript developer", "23/06/2017");
         Program qaAutomation = new Program("qa automation", "23/06/2017");
@@ -19,9 +21,9 @@ public class StudentStatusCheck {
         Student sidorov = new Student("Сидор", "Сидоров", qaAutomation);
         Student alexandrova = new Student("Александра", "Александрова", qaManual);
 
-
-
-      //  ivanov.realWork();
-
+        ivanov.realWork(java, java.calculateDuration());
+        petrov.realWork(javascript, javascript.calculateDuration());
+        sidorov.realWork(qaAutomation, qaAutomation.calculateDuration());
+        alexandrova.realWork(qaManual, qaManual.calculateDuration());
     }
 }
